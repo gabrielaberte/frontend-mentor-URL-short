@@ -9,30 +9,33 @@ import {
 import React, { useState } from "react";
 import illustration from "../../assets/images/illustration-working.svg";
 import { getShortLink } from "../../services/requests";
+import { Divider, List } from "antd";
+import copy from "copy-to-clipboard";
 
 export default function Conteudo() {
   const [longLink, setLongLink] = useState<string>("");
   const [shorterLink, setshorterLink] = useState<string>();
-
-  const shorterLinkArray: string[] = [];
-  const longLinkArray: string[] = [];
+  const [originalLink, setoriginalLink] = useState<string>();
+  const [copyText, setCopyText] = useState<boolean>();
 
   const requestShortLink = async (): Promise<void> => {
     try {
       const shortLink = await getShortLink(longLink);
+
+      setoriginalLink(shortLink.result.original_link);
       setshorterLink(shortLink?.result.short_link);
-      shorterLinkArray.push(shortLink?.result.short_link);
-      longLinkArray.push(longLink);
+
     } catch (erro: any) {
       console.log(erro);
     }
   };
 
-  shorterLinkArray.map((shortLinks) =>{
-    <DivShortLink>
-
-    </DivShortLink>
-  });
+  const copyToClipboard = () => {
+    if (shorterLink){
+    setCopyText(true)
+    copy(shorterLink);
+    }
+  };
 
   return (
     <Container>
@@ -55,6 +58,27 @@ export default function Conteudo() {
         ></input>
         <button onClick={() => requestShortLink()}> Shorten it!</button>
       </DivContainerShortenALink>
+      {shorterLink && (
+        <List
+          style={{ display: "flex", flexDirection: "row" }}
+          size="large"
+          bordered
+          dataSource={[shorterLink]}
+          renderItem={(item) => (
+            <>
+              <List.Item>
+                <DivShortLink>
+                  <div>
+                    <p>{originalLink}</p>
+                  </div>
+                  <span>{item}</span>
+                  <ButtonStyle onClick={copyToClipboard}>{copyText && 'Copied!'}{!copyText && 'Copy'}</ButtonStyle>
+                </DivShortLink>
+              </List.Item>
+            </>
+          )}
+        />
+      )}
     </Container>
   );
 }

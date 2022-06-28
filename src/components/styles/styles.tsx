@@ -32,6 +32,7 @@ export const DivTitulo = styled.div`
     color: grey;
     font-size: 20px;
     margin-top: 5px;
+    margin-bottom: 20px;
   }
 `;
 
@@ -42,7 +43,6 @@ export const DivContainerImageHeader = styled.div`
 export const ButtonStyle = styled.button`
   background-color: #4cdcbf;
   display: flex;
-  margin-top: 20px;
   border-radius: 15px;
   color: white;
   border: 0;
@@ -52,8 +52,9 @@ export const ButtonStyle = styled.button`
   padding-right: 15px;
   padding-top: 5px;
   padding-bottom: 5px;
+  margin-top: 20px;
+  cursor: pointer;
 `;
-
 
 export const DivContainerShortenALink = styled.div`
   display: flex;
@@ -80,6 +81,7 @@ export const DivContainerShortenALink = styled.div`
   padding-right: 15px;
   padding-top: 5px;
   padding-bottom: 5px;
+    cursor: pointer;
  }
 
  input {
@@ -90,5 +92,25 @@ export const DivContainerShortenALink = styled.div`
 
 export const DivShortLink = styled.div`
   display: flex;
-  background-color: yellow;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  text-align: center;
+  width: max-content;
+
+  p{
+    font-weight: 500;
+    margin-top: 10px;
+  }
+
+  span{
+    color:#4cdcbf;
+    font-weight: 800;
+    margin-left: 100px;
+    margin-right: 20px;
+  }
+
+  button{
+    margin-top: 0;
+  }
 `;
