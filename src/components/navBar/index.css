@@ -15,12 +15,6 @@
   background: #fff;
 }
 
-.divTitulo {
-  display: table-column;
-  align-items: center;
-  
-}
-
-.titulo {
-  font-size: 32px;
+.ant-layout {
+width: fit-content;
 }
