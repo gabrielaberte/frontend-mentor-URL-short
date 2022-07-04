@@ -4,6 +4,8 @@ import "./index.css";
 import { Layout, Menu } from "antd";
 import logo from "../../assets/images/logo.svg";
 import Conteudo from "../conteudo";
+import { DivFooter } from "../styles/styles";
+import LinkShorter from "../linkShorter";
 
 const { Header, Content, Footer } = Layout;
 
@@ -19,6 +21,7 @@ const NavBar = () => (
       style={{
         backgroundColor: "white",
         color: "black",
+        width: "100vw",
       }}
     >
       <img src={logo} className={"logo"} />
@@ -33,12 +36,14 @@ const NavBar = () => (
     </Header>
     <Content
       style={{
+        width: "100vw",
         padding: "0 50px",
       }}
     >
       <Layout
         className="site-layout-background"
         style={{
+          width: "100vw",
           padding: "24px 0",
         }}
       >
@@ -49,16 +54,42 @@ const NavBar = () => (
           }}
         >
           <Conteudo />
+          {/* <LinkShorter/> */}
         </Content>
       </Layout>
     </Content>
     <Footer
       style={{
+        display: "flex",
+        justifyContent: "center",
         textAlign: "center",
-        height: "100px",
+        height: "300px",
+        flexDirection: "column",
+        flexWrap: "nowrap",
+        backgroundColor: "#202124",
       }}
     >
-      Ant Design ©2018 Created by Ant UED
+      <img src={logo} className={"logo"} />
+      <DivFooter>
+        <p>Features</p>
+        <p>Resources</p>
+        <p>Company</p>
+      </DivFooter>
+      <DivFooter>
+        <p>Link Shortening</p>
+        <p>Blog</p>
+        <p>About</p>
+      </DivFooter>
+      <DivFooter>
+        <p>Branded Link</p>
+        <p>Developers</p>
+        <p>Our Team</p>
+      </DivFooter>
+      <DivFooter>
+        <p>Analytics</p>
+        <p>Support</p>
+        <p>Careers</p>
+      </DivFooter>
     </Footer>
   </Layout>
 );

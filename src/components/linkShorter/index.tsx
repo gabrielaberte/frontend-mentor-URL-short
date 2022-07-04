@@ -1,19 +1,15 @@
 import {
   ButtonStyle,
-  DivContainerImageHeader,
-  DivTitulo,
   DivContainerShortenALink,
   Container,
   DivShortLink,
-  DivBoost,
 } from "../styles/styles";
 import React, { useState } from "react";
-import illustration from "../../assets/images/illustration-working.svg";
 import { getShortLink } from "../../services/requests";
-import { Divider, List } from "antd";
+import { List } from "antd";
 import copy from "copy-to-clipboard";
 
-export default function Conteudo() {
+export default function LinkShorter() {
   const [longLink, setLongLink] = useState<string>("");
   const [shorterLink, setshorterLink] = useState<string>();
   const [originalLink, setoriginalLink] = useState<string>();
@@ -40,16 +36,7 @@ export default function Conteudo() {
 
   return (
     <Container>
-      <DivContainerImageHeader>
-        <DivTitulo>
-          <p>More than just </p>
-          <p>shorter links</p>
-          <span>Build your brand's recognition and get detailed</span> <br />
-          <span> insights on how your links are performing.</span>
-          <ButtonStyle>Get Started</ButtonStyle>
-        </DivTitulo>
-        <img src={illustration} />
-      </DivContainerImageHeader>
+     
       <DivContainerShortenALink>
         <input
           onChange={(e) => setLongLink(e.target.value)}
@@ -86,10 +73,6 @@ export default function Conteudo() {
         </>
       )}
       <br />
-      <DivBoost>
-        <p>Boost your links today</p>
-        <ButtonStyle>Get Started!</ButtonStyle>
-      </DivBoost>
     </Container>
   );
 }

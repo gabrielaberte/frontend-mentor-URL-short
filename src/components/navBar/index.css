@@ -16,5 +16,13 @@
 }
 
 .ant-layout {
-width: fit-content;
+width: 100vw;
+padding: 0;
+}
+
+.ant-layout-content {
+    flex: auto;
+    min-height: 0;
+    display: flex;
+    justify-content: center;
 }
