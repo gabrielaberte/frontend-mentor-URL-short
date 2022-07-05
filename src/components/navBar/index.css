@@ -26,3 +26,10 @@ padding: 0;
     display: flex;
     justify-content: center;
 }
+
+ @media (max-width: 4000px){
+  .ant-menu-submenu-open {
+    margin-right: 0;
+  }
+ 
+ }

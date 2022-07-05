@@ -19,6 +19,11 @@ export const Container = styled.div`
   }
 `;
 
+export const DivLogin = styled.div`
+display: flex;
+color: grey;
+`;
+
 export const DivTitulo = styled.div`
   align-items: center;
   justify-content: space-evenly;
