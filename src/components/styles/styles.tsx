@@ -13,7 +13,7 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    width: 90vw;
+    width: 100vw;
     padding: 0;
     margin: 0;
   }
@@ -100,6 +100,15 @@ export const DivContainerShortenALink = styled.div`
     height: 40px;
     border-radius: 10px;
   }
+
+  input:required {
+    border-color: red;
+  }
+
+  input::placeholder {
+    color: red;
+    opacity: 0.5;
+  }
 `;
 
 export const DivShortLink = styled.div`
@@ -147,16 +156,90 @@ export const DivBoost = styled.div`
 `;
 export const DivFooter = styled.div`
   display: flex;
+  flex-direction: column;
   color: white;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   flex-wrap: wrap;
+  align-items: baseline;
+  margin-left: 50px;
 
   p {
     font-weight: 500;
+    font-size: 18px;
     margin-right: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
   }
+
+  span {
+    color: grey;
+    margin-bottom: 10px;
+  }
+
+  img {
+    background-color: #202124;
+    color: white;
+  }
+`;
+
+export const DivRedesSociais = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  margin-left: 20px;
+
+  img {
+    margin-left: 25px;
+  }
+`;
+
+export const DivCinza = styled.div`
+  background-color: #e6eded;
+  background-size: contain;
+`;
+
+export const AdvancedStatisticsStyle = styled.div`
+  background-color: #e6eded;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 15px;
+
+  p {
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 0;
+  }
+
+  span {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-self: center;
+    color: grey;
+    padding: 0;
+    margin: 0;
+    width: 400px;
+    text-align: center;
+  }
+
+  @media (max-width: 400px) {
+   span {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-self: center;
+    color: grey;
+    padding: 0;
+    margin: 0;
+    width: 200px;
+    text-align: center;
+  }
+  }
+
 `;

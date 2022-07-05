@@ -1,0 +1,9 @@
+.ant-card-meta-avatar {
+padding-right: 0;
+position: absolute;
+display: flex;
+justify-content: flex-start;
+align-items: flex-end;
+padding-top: 15%;
+}
+

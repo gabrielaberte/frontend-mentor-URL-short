@@ -50,46 +50,9 @@ export default function Conteudo() {
         </DivTitulo>
         <img src={illustration} />
       </DivContainerImageHeader>
-      <DivContainerShortenALink>
-        <input
-          onChange={(e) => setLongLink(e.target.value)}
-          required
-          placeholder="Shorten a link here..."
-        ></input>
-        <button onClick={() => requestShortLink()}> Shorten it!</button>
-      </DivContainerShortenALink>
-      {shorterLink && (
-        <>
-          <br />
-          <List
-            style={{ display: "flex", flexDirection: "row" }}
-            size="large"
-            bordered
-            dataSource={[shorterLink]}
-            renderItem={(item) => (
-              <>
-                <List.Item>
-                  <DivShortLink>
-                    <div>
-                      <p>{originalLink}</p>
-                    </div>
-                    <span>{item}</span>
-                    <ButtonStyle onClick={copyToClipboard}>
-                      {copyText && "Copied!"}
-                      {!copyText && "Copy"}
-                    </ButtonStyle>
-                  </DivShortLink>
-                </List.Item>
-              </>
-            )}
-          />
-        </>
-      )}
+    
       <br />
-      <DivBoost>
-        <p>Boost your links today</p>
-        <ButtonStyle>Get Started!</ButtonStyle>
-      </DivBoost>
+
     </Container>
   );
 }

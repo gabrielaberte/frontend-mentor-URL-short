@@ -3,6 +3,7 @@ import {
   DivContainerShortenALink,
   Container,
   DivShortLink,
+  DivBoost,
 } from "../styles/styles";
 import React, { useState } from "react";
 import { getShortLink } from "../../services/requests";
@@ -36,7 +37,6 @@ export default function LinkShorter() {
 
   return (
     <Container>
-     
       <DivContainerShortenALink>
         <input
           onChange={(e) => setLongLink(e.target.value)}
@@ -49,7 +49,7 @@ export default function LinkShorter() {
         <>
           <br />
           <List
-            style={{ display: "flex", flexDirection: "row" }}
+            style={{ display: "flex", flexDirection: "row", backgroundColor: "white", borderRadius: "10px" }}
             size="large"
             bordered
             dataSource={[shorterLink]}
