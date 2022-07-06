@@ -33,7 +33,7 @@ const NavBar = () => (
           <MenuItem key={1}  style={{ color: "grey" }}>Features</MenuItem>
           <MenuItem key={2}  style={{ color: "grey" }}>Pricing</MenuItem>
           <MenuItem key={3}  style={{ color: "grey" }}>Resources</MenuItem>
-          <MenuItem key={4}  style={{ color: "grey", marginLeft: "450px" }}>Login</MenuItem>
+          <MenuItem key={4}  style={{ color: "grey", marginLeft: "550px" }}>Login</MenuItem>
           <MenuItem key={5}  style={{ color: "grey" }}>Sign Up</MenuItem>
       </Menu>
     </Header>
